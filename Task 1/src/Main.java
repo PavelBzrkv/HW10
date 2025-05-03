@@ -11,6 +11,9 @@ public class Main {
             addBook(name);
             addBook(name, pageCount);
             //todo использовать новый метод тут
+            double cost = inputCost();
+            addBook(name, pageCount, cost);
+
             printInfo();
         }
     }
@@ -30,11 +33,20 @@ public class Main {
     }
 
     public static void addBook(String bookName, int pageCount) {
-        booksInfo = booksInfo + bookName + " - " + (pageCount > 0 ? pageCount : "N/A") + " стр.\n";
+        addBook(bookName, pageCount, 0);
     }
 
     public static void printInfo() {
         System.out.println(booksInfo);
     }
+    public static void addBook(String bookName, int pageCount, double cost){
+        booksInfo = booksInfo + bookName + " - " + (pageCount > 0 ? pageCount : "N/A")+ " стр." +
+                " - " + (cost > 0 ? cost : "Не установлено") + " руб.\n";
+    }
+    public static double inputCost(){
+        System.out.println("Введите цену:");
+        return new Scanner(System.in).nextDouble();
+    }
+
 
 }
