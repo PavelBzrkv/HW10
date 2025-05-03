@@ -10,7 +10,7 @@ public class Main {
             int pageCount = inputPageCount();
             addBook(name);
             addBook(name, pageCount);
-            //todo использовать новый метод тут
+            //использовать новый метод тут
             double cost = inputCost();
             addBook(name, pageCount, cost);
 
